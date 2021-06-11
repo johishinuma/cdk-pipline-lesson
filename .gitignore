@@ -6,4 +6,8 @@ node_modules
 # CDK asset staging directory
 .cdk.staging
 cdk.out
+<<<<<<< HEAD
 !lambda/*.js
+=======
+!lambda/*.js
+>>>>>>> origin/master
