@@ -12,6 +12,7 @@ export class CdkpipelinesDemoPipelineStack extends Stack {
 
     const sourceArtifact = new codepipeline.Artifact();
     const cloudAssemblyArtifact = new codepipeline.Artifact();
+    const oauthToken = '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'
  
     const pipeline = new CdkPipeline(this, 'Pipeline', {
       // The pipeline name
@@ -22,7 +23,7 @@ export class CdkpipelinesDemoPipelineStack extends Stack {
       sourceAction: new codepipeline_actions.GitHubSourceAction({
         actionName: 'GitHub',
         output: sourceArtifact,
-        oauthToken: SecretValue.secretsManager('github-token'),
+        oauthToken: SecretValue.plainText(oauthToken),
         owner: 'johishinuma',
         repo: 'cdk-pipline-lesson',
       }),
